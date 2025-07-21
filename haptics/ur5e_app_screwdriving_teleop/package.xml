@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ur5e_app_screwdriving_teleop</name>
+  <version>0.0.0</version>
+  <description>An application package for teleoperating the UR5e</description>
+  <author email="lpagliara@unisa.it">Lorenzo Pagliara</author>
+  <maintainer email="eferrentino@unisa.it">Enrico Ferrentino</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>acg_admittance_controller</exec_depend>
+  <exec_depend>acg_resources_chalk_holder_description</exec_depend>
+  <exec_depend>acg_resources_ft_sensor_gazebo_description</exec_depend>
+  <exec_depend>acg_resources_screwdriver_description</exec_depend>
+  <exec_depend>acg_resources_ur5e_moveit_config</exec_depend>
+  <exec_depend>acg_resources_ur_force_torque_sensor_description</exec_depend>
+  <exec_depend>haptic_fb_controller</exec_depend>
+  <exec_depend>haptic_ff_controller</exec_depend>
+  <exec_depend>haptic_forward_force_controller</exec_depend>
+  <exec_depend>haptic_virtual_force_controller</exec_depend>
+  <exec_depend>pose_broadcaster</exec_depend>
+  <exec_depend>touch_haptic_device</exec_depend>
+  <exec_depend>twist_broadcaster</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

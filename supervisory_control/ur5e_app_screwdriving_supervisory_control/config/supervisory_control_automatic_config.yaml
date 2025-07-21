@@ -1,0 +1,11 @@
+screwdriving_supervisory_controller:
+  ros__parameters:
+    mesh_package: "ur5e_app_screwdriving_supervisory_control"
+    mesh_filename: "/meshes/pipes.stl"
+    move_group_name: "ur_manipulator_with_end_effector"
+    base_reference_frame: "base_link"
+    end_effector_frame: "screwdriver"
+    bolt_center_pose: [-0.534, 0.080, 0.280, 3.14, 0.0, 1.5708]  # [x, y, z, roll, pitch, yaw]
+    reference_generator_controller: "joint_space_reference_generator"
+    teleoperation_controllers: ["haptic_ff_controller", haptic_virtual_force_controller, haptic_fb_controller]
+    use_sim_time: false

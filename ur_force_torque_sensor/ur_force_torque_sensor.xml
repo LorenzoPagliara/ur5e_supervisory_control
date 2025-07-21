@@ -1,0 +1,9 @@
+<library path="ur_force_torque_sensor">
+  <class name="ur_force_torque_sensor/URFTSensor"
+          type="ur_force_torque_sensor::URFTSensor"
+          base_class_type="hardware_interface::SensorInterface">
+    <description>
+      Implements a Hardware Interface plugin for the UR force/torque sensor.
+    </description>
+  </class>
+</library>

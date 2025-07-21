@@ -1,0 +1,11 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000  # Hz
+
+    haptic_pose_broadcaster:
+      type: pose_broadcaster/PoseBroadcaster
+
+haptic_pose_broadcaster:
+  ros__parameters:
+    pose_name: "touch_haptic_device"
+    frame_id: "touch_haptic_device_base"

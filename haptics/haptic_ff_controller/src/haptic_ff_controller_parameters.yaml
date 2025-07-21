@@ -1,0 +1,187 @@
+haptic_ff_controller:
+  joints: {
+    type: string_array,
+    description: "Specifies the joint name for the haptic feedforward controller.",
+    read_only: true
+  }
+
+  state_interfaces: {
+    type: string_array,
+    description: "Specifies which state interfaces the controller will claim.",
+    read_only: true
+  }
+  command_interfaces: {
+    type: string_array,
+    description: "Specifies which command interfaces the controller will claim.",
+    read_only: true
+  }
+  downstream_controller_name: {
+    type: string,
+    description: "Specifies the name of the downstream controller ",
+    read_only: true,
+    default_value: "admittance_controller"
+  }
+  haptic_device_name: {
+    type: string,
+    description: "Specifies the name of the haptic device.",
+    read_only: true,
+    default_value: "touch_haptic_device"
+  }
+
+  haptic_pose_subscriber:
+    topic_name: {
+      type: string,
+      description: "Specifies the topic name for the haptic pose subscriber.",
+      default_value: "/hd/haptic_pose_broadcaster/pose"
+    }
+    queue_size: {
+      type: int,
+      description: "Specifies the queue size for the haptic pose subscriber.",
+      default_value: 100
+    }
+
+  haptic_twist_subscriber:
+    topic_name: {
+      type: string,
+      description: "Specifies the topic name for the haptic twist subscriber.",
+      default_value: "/hd/haptic_pose_broadcaster/twist"
+    }
+    queue_size: {
+      type: int,
+      description: "Specifies the queue size for the haptic twist subscriber.",
+      default_value: 100
+    }
+
+  haptic_pose_rviz_publisher:
+    topic_name: {
+      type: string,
+      description: "Specifies the topic name for the haptic robot poses publisher.",
+      default_value: "~/haptic_pose_rviz"
+    }
+    frame_id: {
+      type: string,
+      description: "Specifies the frame ID for the haptic robot poses publisher.",
+      default_value: ""
+    }
+
+  reference_pose_publisher:
+    topic_name: {
+      type: string,
+      description: "Specifies the topic name for the reference pose publisher.",
+      default_value: "~/reference_pose"
+    }
+    frame_id: {
+      type: string,
+      description: "Specifies the frame ID for the reference pose publisher.",
+      default_value: ""
+    }
+
+  reference_twist_publisher:
+    topic_name: {
+      type: string,
+      description: "Specifies the topic name for the reference twist publisher.",
+      default_value: "~/reference_twist"
+    }
+    frame_id: {
+      type: string,
+      description: "Specifies the frame ID for the reference twist publisher.",
+      default_value: ""
+    }
+
+  kinematics:
+    plugin_name: {
+      type: string,
+      description: "Specifies the name of the kinematics plugin to load."
+    }
+    plugin_package: {
+      type: string,
+      description: "Specifies the package name that contains the kinematics plugin."
+    }
+    tip: {
+      type: string,
+      description: "Specifies the end effector link of the robot description used by the kinematics plugin."
+    }
+    alpha: {
+      type: double,
+      default_value: 0.01,
+      description: "Specifies the damping coefficient for the Jacobian pseudo inverse."
+    }
+  engagement_orientation_threshold: {
+    type: double,
+    default_value: 0.01,
+    description: "Specifies the threshold for the orientation error to engage the controller.",
+    read_only: true
+  }
+  RPY_robot_base_to_haptic_base: {
+    type: double_array,
+    default_value: [1.5708, 0.0, 3.1416],  # rad(pi/2), 0, rad(pi)
+    description: "Specifies the roll, pitch, and yaw angles for the transform from the robot base to the haptic base."
+  }
+  RPY_haptic_ee_to_tool_tip: {
+    type: double_array,
+    default_value: [3.1416, 0.0, -1.5708],  # rad(pi), 0, rad(-pi/2)
+    description: "Specifies the roll, pitch, and yaw angles for the transform from the haptic end-effector to the tool tip."
+  }
+  robot_ee_to_TCP: {
+    type: double_array,
+    default_value: [0.0, 0.0, 0.0, 0.0, 0.0, 0.199],
+    description: "Specifies the TCP transform as a 6-element array [x, y, z, roll, pitch, yaw]."
+  }
+  scaling_factor: {
+    type: double_array,
+    default_value: [1.0, 1.0, 1.0],
+    description: "Specifies the scaling factor for position control for each axis."
+  }
+  robot_base_frame: {
+    type: string,
+    default_value: "base_link_inertia",
+    description: "Specifies the robot base frame."
+  }
+  robot_ee_frame: {
+    type: string,
+    default_value: "wrist_3_link",
+    description: "Specifies the robot end-effector frame."
+  }
+  simulation: {
+    type: bool,
+    default_value: true,
+    description: "Specifies if the simulation mode is enabled."
+  }
+  velocity_control: {
+    type: bool,
+    default_value: false,
+    description: "Specifies if the velocity control is enabled.",
+    read_only: true
+  }
+  haptic_device_interfaces: {
+    type: string_array,
+    default_value: [
+      "touch_haptic_device/position.x",
+      "touch_haptic_device/position.y",
+      "touch_haptic_device/position.z",
+      "touch_haptic_device/orientation.x",
+      "touch_haptic_device/orientation.y",
+      "touch_haptic_device/orientation.z",
+      "touch_haptic_device/orientation.w"
+    ],
+    description: "Specifies the haptic device interface."
+  }
+  filter_chain:
+    filter1:
+      name: {
+        type: string,
+        default_value:  "moving_average_poses_filter",
+        description: "Specifies the name of the filter."
+      }
+      type: {
+        type: string,
+        default_value: "moving_average_poses_filter/MovingAveragePosesFilter",
+        description: "Specifies the type of the filter."
+      }
+      params: {
+        number_of_observations: {
+        type: int,
+        default_value: 50,
+        description: "Specifies the number of observations for the filter."
+        }
+      }

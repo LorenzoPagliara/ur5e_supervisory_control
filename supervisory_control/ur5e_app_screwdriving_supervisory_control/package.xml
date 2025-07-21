@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ur5e_app_screwdriving_supervisory_control</name>
+  <version>0.0.0</version>
+  <description>This package provides a demo for screwdriving tasks with the UR5e robot under supervisory control.</description>
+  <maintainer email="lpagliara@unisa.it">lpagliara</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>acg_admittance_controller</exec_depend>
+  <exec_depend>acg_resources_chalk_holder_description</exec_depend>
+  <exec_depend>acg_resources_ft_sensor_gazebo_description</exec_depend>
+  <exec_depend>acg_resources_screwdriver_description</exec_depend>
+  <exec_depend>acg_resources_ur5e_moveit_config</exec_depend>
+  <exec_depend>acg_resources_ur5e_moveit_config</exec_depend>
+  <exec_depend>acg_resources_ur_force_torque_sensor_description</exec_depend>
+  <exec_depend>cartesian_pose_controller</exec_depend>
+  <exec_depend>endoscopic_camera_streaming_rviz</exec_depend>
+  <exec_depend>erob70i_control</exec_depend>
+  <exec_depend>haptic_fb_controller</exec_depend>
+  <exec_depend>haptic_ff_controller</exec_depend>
+  <exec_depend>haptic_forward_force_controller</exec_depend>
+  <exec_depend>haptic_virtual_force_controller</exec_depend>
+  <exec_depend>pose_broadcaster</exec_depend>
+  <exec_depend>reference_generator</exec_depend>
+  <exec_depend>screwdriving_supervisory_controller</exec_depend>
+  <exec_depend>touch_haptic_device</exec_depend>
+  <exec_depend>twist_broadcaster</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

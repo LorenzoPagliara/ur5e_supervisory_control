@@ -1,0 +1,106 @@
+haptic_virtual_force_controller:
+  simulation:
+    type: bool
+    default_value: false
+    description: "Enable simulation mode"
+    read_only: true
+  position_error_topic_name:
+    type: string
+    default_value: "/haptic_fb_controller/position_error"
+    description: "Topic name from which the controller will read the position error"
+    read_only: true
+  velocity_error_topic_name:
+    type: string
+    default_value: "/haptic_fb_controller/velocity_error"
+    description: "Topic name from which the controller will read the velocity error"
+    read_only: true
+  state_interfaces:
+    type: string_array
+    default_value: []
+    description: "Specifies which state interfaces the controller will claim"
+    read_only: true
+  command_interfaces:
+    type: string_array
+    default_value: []
+    description: "Specifies which command interfaces the controller will claim"
+    read_only: true
+  pid:
+    x:
+      p:
+        type: double
+        default_value: 0.0
+        description: "Specifies the proportional gain for the x direction."
+      i:
+        type: double
+        default_value: 0.0
+        description: "Specifies the integral gain for the x direction."
+      d:
+        type: double
+        default_value: 0.0
+        description: "Specifies the derivative gain for the x direction."
+      i_clamp_min:
+        type: double
+        default_value: 0.0
+        description: "Specifies the minimum value for the integral term for the x direction."
+      i_clamp_max:
+        type: double
+        default_value: 0.0
+        description: "Specifies the maximum value for the integral term for the x direction."
+      antiwindup:
+        type: bool
+        default_value: false
+        description: "Specifies whether the anti-windup mechanism is enabled for the x direction."
+    y:
+      p:
+        type: double
+        default_value: 0.0
+        description: "Specifies the proportional gain for the y direction."
+      i:
+        type: double
+        default_value: 0.0
+        description: "Specifies the integral gain for the y direction."
+      d:
+        type: double
+        default_value: 0.0
+        description: "Specifies the derivative gain for the y direction."
+      i_clamp_min:
+        type: double
+        default_value: 0.0
+        description: "Specifies the minimum value for the integral term for the y direction."
+      i_clamp_max:
+        type: double
+        default_value: 0.0
+        description: "Specifies the maximum value for the integral term for the y direction."
+      antiwindup:
+        type: bool
+        default_value: false
+        description: "Specifies whether the anti-windup mechanism is enabled for the y direction."
+    z:
+      p:
+        type: double
+        default_value: 0.0
+        description: "Specifies the proportional gain for the z direction."
+      i:
+        type: double
+        default_value: 0.0
+        description: "Specifies the integral gain for the z direction."
+      d:
+        type: double
+        default_value: 0.0
+        description: "Specifies the derivative gain for the z direction."
+      i_clamp_min:
+        type: double
+        default_value: 0.0
+        description: "Specifies the minimum value for the integral term for the z direction."
+      i_clamp_max:
+        type: double
+        default_value: 0.0
+        description: "Specifies the maximum value for the integral term for the z direction."
+      antiwindup:
+        type: bool
+        default_value: false
+        description: "Specifies whether the anti-windup mechanism is enabled for the z direction."
+  max_haptic_device_force:
+      type: double
+      default_value: 1.0  # N
+      description: "Specifies the maximum force that the haptic device can exert."

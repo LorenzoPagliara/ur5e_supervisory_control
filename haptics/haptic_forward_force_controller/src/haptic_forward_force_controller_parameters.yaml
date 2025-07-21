@@ -1,0 +1,51 @@
+haptic_forward_force_controller:
+  simulation:
+    type: bool
+    default_value: false
+    description: "Enable simulation mode"
+    read_only: true
+  topic_name:
+    type: string
+    default_value: "/haptic_fb_controller/forces"
+    description: "Topic name from which to take force feedback"
+    read_only: true
+  state_interfaces:
+    type: string_array
+    default_value: []
+    description: "Specifies which state interfaces the controller will claim"
+    read_only: true
+  command_interfaces:
+    type: string_array
+    default_value: []
+    description: "Specifies which command interfaces the controller will claim"
+    read_only: true
+  RPY_robot_base_to_haptic_base:
+    type: double_array
+    default_value: [1.5708, 0.0, 3.1416]  # rad(pi/2), 0, rad(pi)
+    description: "Specifies the roll, pitch, and yaw angles for the transform from the robot base to the haptic base."
+  max_robot_force:
+    x:
+      type: double
+      default_value: 100.0  # N
+      description: "Specifies the maximum force that the robot can exert in the x direction."
+    y:
+      type: double
+      default_value: 100.0  # N
+      description: "Specifies the maximum force that the robot can exert in the y direction."
+    z:
+      type: double
+      default_value: 100.0  # N
+      description: "Specifies the maximum force that the robot can exert in the z direction."
+  max_haptic_device_force:
+    x:
+      type: double
+      default_value: 1.0  # N
+      description: "Specifies the maximum force that the haptic device can exert in the x direction."
+    y:
+      type: double
+      default_value: 1.0  # N
+      description: "Specifies the maximum force that the haptic device can exert in the y direction."
+    z:
+      type: double
+      default_value: 1.0  # N
+      description: "Specifies the maximum force that the haptic device can exert in the z direction."

@@ -1,0 +1,9 @@
+<library path="touch_haptic_device">
+    <class name="haptic_device/HapticDeviceTouch"
+           type="haptic_device::HapticDeviceTouch"
+           base_class_type="hardware_interface::SystemInterface">
+        <description>
+            This class is a hardware interface for a Touch haptic device.
+        </description>
+    </class>
+</library>

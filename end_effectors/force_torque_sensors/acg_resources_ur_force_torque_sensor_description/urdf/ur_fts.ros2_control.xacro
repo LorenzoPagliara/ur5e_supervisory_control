@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="UR FTS plugin">
+  <xacro:macro name="build_ros2_control_description" params="config">
+    <xacro:define_property_from_dict input_dict="${config}" name="tf_prefix" default_value=""/>
+    <xacro:define_property_from_dict input_dict="${config}" name="robot_ip" default_value="192.168.20.183"/>
+    <xacro:define_property_from_dict input_dict="${config}" name="update_rate" default_value="100"/>
+
+    <!-- UR force/torque sensor ros2_control hardware description -->
+    <xacro:include filename="$(find ur_force_torque_sensor)/config/ur_fts.ros2_control.xacro"/>
+    <xacro:ur_ft_sensor tf_prefix="${tf_prefix}" robot_ip="${robot_ip}" update_rate="${update_rate}"/>
+  </xacro:macro>
+</robot>

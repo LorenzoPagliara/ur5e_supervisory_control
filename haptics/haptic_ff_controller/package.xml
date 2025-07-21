@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>haptic_ff_controller</name>
+  <version>0.0.0</version>
+  <description>This package contains the haptic feedforward controller</description>
+  <maintainer email="eferrentino@unisa.it">Enrico Ferrentino</maintainer>
+  <author email="m.marsico10@studenti.unisa.it">Michele Marsico</author>
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>acg_admittance_controller</depend>
+  <depend>acg_control_msgs</depend>
+  <depend>acg_resources_ur10_moveit_config</depend>
+  <depend>angles</depend>
+  <depend>filters</depend>
+  <depend>generate_parameter_library</depend>
+  <depend>geometry_msgs</depend>
+  <depend>hardware_interface</depend>
+  <depend>kinematics_interface</depend>
+  <depend>moving_average_poses_filter</depend>
+  <depend>pluginlib</depend>
+  <depend>pose_broadcaster</depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <depend>realtime_tools</depend>
+  <depend>ros2_control</depend>
+  <depend>tf2</depend>
+  <depend>tf2_eigen</depend>
+  <depend>tf2_geometry_msgs</depend>
+  <depend>tf2_kdl</depend>
+  <depend>touch_haptic_device</depend>
+  <depend>visualization_msgs</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

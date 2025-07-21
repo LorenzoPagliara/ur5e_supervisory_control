@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot name="touch_haptic_device" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find touch_haptic_device)/urdf/touch_haptic_device.ros2_control.xacro"/>
+
+  <xacro:touch_haptic_device_ros2_control/>
+
+  <!-- This link is only necessary to let a robot state publisher to load this description
+  without returning an error. For more information on why a robot state publisher is used
+  even though an URDF for the haptic device is not available, please refer to the package
+  documentation. -->
+  <link name="touch_haptic_device_base"/>
+</robot>

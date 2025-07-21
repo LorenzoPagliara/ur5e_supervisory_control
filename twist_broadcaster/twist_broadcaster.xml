@@ -1,0 +1,9 @@
+<library path="twist_broadcaster">
+    <class name="twist_broadcaster/TwistBroadcaster"
+           type="twist_broadcaster::TwistBroadcaster"
+           base_class_type="controller_interface::ControllerInterface">
+        <description>
+            This class publishes a twist as a geometry_msgs::msg::TwistStamped message.
+    </description>
+    </class>
+</library>

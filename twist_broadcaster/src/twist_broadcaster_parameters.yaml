@@ -1,0 +1,19 @@
+twist_broadcaster:
+  frame_id:
+    type: string
+    default_value: ""
+    description: "frame_id in which values are published"
+    validation:
+      not_empty<>: null
+  twist_name:
+    type: string
+    default_value: ""
+    description: "Base name used as prefix for controller interfaces. The state interface names are: ``<twist_name>/linear.x, ..., <twist_name>/angular.z``"
+    validation:
+      not_empty<>: null
+  twist_topic:
+    type: string
+    default_value: "~/twist"
+    description: "Topic name to publish the twist message"
+    validation:
+      not_empty<>: null

@@ -1,0 +1,316 @@
+# Based on Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz/config/ur_controllers.yaml
+
+controller_manager:
+  ros__parameters:
+    update_rate: 125  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    io_and_status_controller:
+      type: ur_controllers/GPIOController
+
+    speed_scaling_state_broadcaster:
+      type: ur_controllers/SpeedScalingStateBroadcaster
+
+    force_torque_sensor_broadcaster:
+      type: force_torque_sensor_broadcaster/ForceTorqueSensorBroadcaster
+
+    joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    scaled_joint_trajectory_controller:
+      type: ur_controllers/ScaledJointTrajectoryController
+
+    forward_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+    forward_position_controller:
+      type: position_controllers/JointGroupPositionController
+
+    admittance_controller:
+      type: acg_admittance_controller/AdmittanceController
+
+    haptic_ff_controller:
+      type: haptic_ff_controller/HapticFeedforwardController
+
+    haptic_pose_broadcaster:
+      type: haptic_pose_broadcaster/HapticPoseBroadcaster
+
+    ur_configuration_controller:
+      type: ur_controllers/URConfigurationController
+
+ur_configuration_controller:
+  ros__parameters:
+    tf_prefix: "$(var tf_prefix)"
+
+speed_scaling_state_broadcaster:
+  ros__parameters:
+    state_publish_rate: 100.0
+
+joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 100.0
+    action_monitor_rate: 20.0
+    allow_partial_joints_goal: false
+    constraints:
+      stopped_velocity_tolerance: 0.2
+      goal_time: 0.0
+      shoulder_pan_joint: { trajectory: 0.2, goal: 0.1 }
+      shoulder_lift_joint: { trajectory: 0.2, goal: 0.1 }
+      elbow_joint: { trajectory: 0.2, goal: 0.1 }
+      wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
+      wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
+      wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
+
+scaled_joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 100.0
+    action_monitor_rate: 20.0
+    allow_partial_joints_goal: false
+    constraints:
+      stopped_velocity_tolerance: 0.2
+      goal_time: 0.0
+      shoulder_pan_joint: { trajectory: 0.2, goal: 0.1 }
+      shoulder_lift_joint: { trajectory: 0.2, goal: 0.1 }
+      elbow_joint: { trajectory: 0.2, goal: 0.1 }
+      wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
+      wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
+      wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
+
+forward_velocity_controller:
+  ros__parameters:
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    interface_name: velocity
+
+forward_position_controller:
+  ros__parameters:
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+
+admittance_controller:
+  ros__parameters:
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    type_of_command: "joint_space"
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    # chainable_joint_command_interfaces:
+    #   - position
+    #   - velocity
+    #   - acceleration
+    chainable_task_space_command_interfaces:
+      - task_space_pose
+      - task_space_twist
+      - task_space_acceleration
+    kinematics:
+      plugin_name: kinematics_interface_kdl/KinematicsInterfaceKDL
+      plugin_package: kinematics_interface
+      base: base_link_inertia
+      tip: wrist_3_link
+      group_name: ur_manipulator
+      alpha: 0.0005
+    filter_chain:
+      fixed_orientation:
+        filter1:
+          name: unbiasing_filter
+          type: unbiasing_filter/UnbiasingFilterDouble
+          params:
+            number_of_stable_samples_for_bias: 5000
+            tolerance: 0.2
+        filter2:
+          name: moving_average_filter
+          type: moving_average_filter/MultiChannelMovingAverageFilterDouble
+          params:
+            number_of_observations: 100
+      variable_orientation:
+        filter1:
+          name: gravity_and_sensor_bias_filter
+          type: gravity_and_sensor_bias_filter/GravityAndSensorBiasFilterDouble
+          params:
+            ft_sensor_link_name: ft_sensor
+            number_of_observations: 2
+            number_of_stable_samples_for_bias: 625
+            tolerance: 2.0
+        filter2:
+          name: moving_average_filter
+          type: moving_average_filter/MultiChannelMovingAverageFilterDouble
+          params:
+            number_of_observations: 10
+    control_frame: wrist_3_link
+    ft_sensor:
+      name: robotiq_ft_sensor
+      frame:
+        id: wrist_3_link
+    execution_with_fixed_orientation:
+      flag: false
+      orientation_tolerance: 0.05
+    clik_gains:
+      - 10.0
+      - 10.0
+      - 10.0
+      - 10.0
+      - 10.0
+      - 10.0
+    selected_axes:
+      - true
+      - true
+      - true
+      - true
+      - true
+      - true
+    admittance_filter:
+      mass:
+        - 50.0
+        - 50.0
+        - 50.0
+        - 3.0
+        - 3.0
+        - 3.0
+      damping_ratio:
+        - 1.0
+        - 1.0
+        - 1.0
+        - 1.0
+        - 1.0
+        - 1.0
+      stiffness:
+        - 100.0
+        - 100.0
+        - 100.0
+        - 6.0
+        - 6.0
+        - 6.0
+    command_tolerance: 0.05
+    logging_enabled: true
+
+haptic_ff_controller:
+  ros__parameters:
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+
+    state_interfaces:
+      - position
+      - velocity
+
+    command_interfaces:
+      - position
+
+    downstream_controller_name: admittance_controller
+
+    haptic_device_name: touch_haptic_device
+
+    haptic_pose_subscriber:
+      topic_name: /hd/haptic_pose_broadcaster/pose
+      queue_size: 100
+
+    haptic_twist_subscriber:
+      topic_name: /hd/haptic_pose_broadcaster/twist
+      queue_size: 100
+
+    haptic_pose_rviz_publisher:
+      topic_name: haptic_reference_poses
+      queue_size: 100
+
+    kinematics:
+      plugin_name: kinematics_interface_kdl/KinematicsInterfaceKDL
+      plugin_package: kinematics_interface
+      base: base_link_inertia
+      tip: wrist_3_link
+      group_name: ur_manipulator
+      alpha: 0.0005
+
+    engagement_orientation_threshold: 0.01
+
+    RPY_robot_base_to_haptic_base: [1.5708, 0.0, 1.5708] #blackboard values
+    # RPY_robot_base_to_haptic_base: [1.5708, 0.0, 3.1416] #dental
+
+    RPY_haptic_ee_to_tool_tip: [3.1416, 0.0, 0.0]
+
+    # Remote center of motion transform with respect to the end-effector frame in the form [roll, pitch, yaw, x, y, z]
+    # The default transform represents the transformation from the robot end-effector to the tip of the the long handle,
+    # mounted on a force torque sensor
+    # robot_ee_to_TCP: [0.0, 0.0, 1.5708, 0.0, 0.0, 0.18]
+    robot_ee_to_TCP: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+    scaling_factor: [1.0, 1.0, 1.0]
+
+    robot_base_frame: "base_link_inertia"
+
+    robot_ee_frame:  "wrist_3_link"
+
+    simulation: true
+    velocity_control: false
+
+    haptic_device_interfaces:
+      - touch_haptic_device/position.x
+      - touch_haptic_device/position.y
+      - touch_haptic_device/position.z
+      - touch_haptic_device/orientation.x
+      - touch_haptic_device/orientation.y
+      - touch_haptic_device/orientation.z
+      - touch_haptic_device/orientation.w
+
+    filter_chain:
+      filter1:
+        name: "moving_average_poses_filter"
+        type: "moving_average_poses_filter/MovingAveragePosesFilter"
+        params:
+          number_of_observations: 10
+
+haptic_pose_broadcaster:
+  ros__parameters:
+    state_interfaces:
+      - touch_haptic_device
+
+    haptic_pose_publisher:
+      topic_name: pose
+      queue_size: 10

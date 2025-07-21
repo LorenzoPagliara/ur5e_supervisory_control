@@ -1,0 +1,9 @@
+<library path="task_space_mock_controller">
+  <class name="task_space_mock_controller/TaskSpaceMockController"
+         type="task_space_mock_controller::TaskSpaceMockController"
+         base_class_type="controller_interface::ChainableControllerInterface">
+    <description>
+      A task space mock controller developed by the Automatic Control Group of the University of Salerno, Italy.
+    </description>
+  </class>
+</library>

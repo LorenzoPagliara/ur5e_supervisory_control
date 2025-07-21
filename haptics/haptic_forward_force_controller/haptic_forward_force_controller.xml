@@ -1,0 +1,9 @@
+<library path="haptic_forward_force_controller">
+    <class name="haptic_forward_force_controller/HapticForwardForceController"
+           type="haptic_forward_force_controller::HapticForwardForceController"
+           base_class_type="controller_interface::ChainableControllerInterface">
+        <description>
+            This class implements a force controller for a haptic device.
+    </description>
+    </class>
+</library>

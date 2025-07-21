@@ -1,0 +1,5 @@
+<library path="supervisory_control_rviz_panel">
+  <class type="supervisory_control_rviz_panel::SupervisoryControlPanel" base_class_type="rviz_common::Panel">
+    <description>A custum RViz panel for supervisory control</description>
+  </class>
+</library>

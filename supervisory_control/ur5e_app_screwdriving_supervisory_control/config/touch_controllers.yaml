@@ -1,0 +1,82 @@
+hd:
+  controller_manager:
+    ros__parameters:
+      update_rate: 1000  # Hz
+
+      haptic_forward_force_controller:
+        type: haptic_forward_force_controller/HapticForwardForceController
+
+      haptic_virtual_force_controller:
+        type: haptic_virtual_force_controller/HapticVirtualForceController
+
+      haptic_pose_broadcaster:
+        type: pose_broadcaster/PoseBroadcaster
+
+      haptic_twist_broadcaster:
+        type: twist_broadcaster/TwistBroadcaster
+
+  haptic_pose_broadcaster:
+    ros__parameters:
+      pose_name: "touch_haptic_device"
+      frame_id: "touch_haptic_device_base"
+
+  haptic_twist_broadcaster:
+    ros__parameters:
+      twist_name: "touch_haptic_device"
+      frame_id: "touch_haptic_device_base"
+
+  haptic_forward_force_controller:
+    ros__parameters:
+      command_interfaces:
+        - touch_haptic_device/force.x
+        - touch_haptic_device/force.y
+        - touch_haptic_device/force.z
+        - touch_haptic_device/torque.x
+        - touch_haptic_device/torque.y
+        - touch_haptic_device/torque.z
+      simulation: true
+      topic_name: "/haptic_fb_controller/wrench"
+      RPY_robot_base_to_haptic_base: [1.5708, 0.0, 0.0]
+      max_haptic_device_force:
+        x: 3.0
+        y: 3.0
+        z: 3.0
+      max_robot_force: # Expressed with respect to the robot base frame
+        # x: 140.0  # with the compliance controller
+        x: 150.0  # 400.0 with the admittance controller
+        y: 100.0
+        z: 100.0
+
+  haptic_virtual_force_controller:
+    ros__parameters:
+      command_interfaces:
+        - touch_haptic_device/force.x
+        - touch_haptic_device/force.y
+        - touch_haptic_device/force.z
+        - touch_haptic_device/torque.x
+        - touch_haptic_device/torque.y
+        - touch_haptic_device/torque.z
+      simulation: true
+      pid:
+        x:
+          p: 60.0
+          i: 0.0
+          d: 0.01
+          i_clamp_min: -1.0
+          i_clamp_max: +1.0
+          antiwindup: false
+        y:
+          p: 60.0
+          i: 0.0
+          d: 0.01
+          i_clamp_min: -1.0
+          i_clamp_max: +1.0
+          antiwindup: false
+        z:
+          p: 80.0
+          i: 0.0
+          d: 0.01
+          i_clamp_min: -1.0
+          i_clamp_max: +1.0
+          antiwindup: false
+      max_haptic_device_force: 3.0

@@ -1,0 +1,9 @@
+<library path="haptic_ff_controller">
+    <class name="haptic_ff_controller/HapticFeedforwardController"
+           type="haptic_ff_controller::HapticFeedforwardController"
+           base_class_type="controller_interface::ControllerInterface">
+        <description>
+            This class implements a simple controller that reads the state of a haptic device and publish them.
+    </description>
+    </class>
+</library>

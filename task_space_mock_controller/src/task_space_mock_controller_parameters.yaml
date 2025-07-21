@@ -1,0 +1,53 @@
+task_space_mock_controller:
+  task_space_reference_interfaces: {
+    type: string_array,
+    description: "Specifies the interfaces that will be exported by the task space mock controller.",
+    default_value: ["pose"],
+    read_only: true
+  }
+  reference_interfaces_names_override:
+    task_space_pose: {
+      type: string_array,
+      description: "If this parameter is set, it will override the default names for the pose reference interfaces.",
+      default_value: [],
+      read_only: true
+    }
+    task_space_velocity: {
+      type: string_array,
+      description: "If this parameter is set, it will override the default names for the twist velocity reference interfaces.",
+      default_value: [],
+      read_only: true
+    }
+    task_space_acceleration: {
+      type: string_array,
+      description: "If this parameter is set, it will override the default names for the acceleration reference interfaces.",
+      default_value: [],
+      read_only: true
+    }
+    task_space_wrench: {
+      type: string_array,
+      description: "If this parameter is set, it will override the default names for the wrench reference interfaces.",
+      default_value: [],
+      read_only: true
+    }
+    task_space_wrench_derivative: {
+      type: string_array,
+      description: "If this parameter is set, it will override the default names for the wrench derivative reference interfaces.",
+      default_value: [],
+      read_only: true
+    }
+  task_space_reference_frame: {
+    type: string,
+    description: "Specifies the reference frame for the task space reference.",
+    default_value: "world",
+    read_only: true
+  }
+  publish_frequency: {
+    type: int,
+    description: "Specifies the maximum frequency at which the task space reference tries to publish.",
+    default_value: 5,
+    read_only: true,
+    validation: {
+      gt: [ 0 ]
+    }
+  }

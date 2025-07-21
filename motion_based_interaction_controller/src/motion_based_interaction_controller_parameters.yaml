@@ -1,0 +1,199 @@
+motion_based_interaction_controller:
+  robot_name: {
+    type: string,
+    description: "Specifies the name of the robot.",
+    read_only: true,
+    validation: {
+      not_empty<>: null,
+    }
+  }
+  joints: {
+    type: string_array,
+    description: "Specifies which joints will be used by the controller.",
+    default_value: [],
+    read_only: true,
+    validation: {
+      not_empty<>: null,
+    }
+  }
+  force_torque_sensor:
+    name: {
+        type: string,
+        description: "Specifies the name of the force/torque sensor providing measurements.",
+        default_value: "",
+        read_only: true,
+        validation: {
+          not_empty<>: null,
+        }
+      }
+    measure_frame: {
+        type: string,
+        description: "Specifies the name of the frame in which the force/torque measures are expressed.",
+        default_value: "",
+        read_only: true,
+        validation: {
+          not_empty<>: null,
+        }
+      }
+  state_interfaces_names_override:
+    position: {
+      type: string_array,
+      description: "If this parameter is set, it will override the default names (<robot_name>/<joint_name>/position) for the joint position state interface.",
+      default_value: [],
+      read_only: true
+    }
+    velocity: {
+      type: string_array,
+      description: "If this parameter is set, it will override the default names (<robot_name>/<joint_name>/velocity) for the joint velocity state interface.",
+      default_value: [],
+      read_only: true
+    }
+  ft_sensor_state_interfaces_names_override: {
+    type: string_array,
+    description: "If this parameter is set, it will override the default names (<sensor_name>/[force/torque].[x/y/z]) for the force/torque sensor state interfaces.",
+    default_value: [],
+    read_only: true
+  }
+  command_interfaces: {
+    type: string_array,
+    description: "Specifies the interfaces that will be used to send commands.",
+    default_value: ["pose"],
+    read_only: true,
+    validation: {
+      subset_of<>: [["pose", "twist"]],
+      unique<>: null,
+      not_empty<>: null
+    }
+  }
+  command_interfaces_names_override:
+    pose: {
+      type: string_array,
+      description: "If this parameter is set, it will override the default names (<downstream_controller_name/[position/orientation].[x/y/z/w]) for the pose command interfaces.",
+      default_value: [],
+      read_only: true
+    }
+    twist: {
+      type: string_array,
+      description: "If this parameter is set, it will override the default names (<downstream_controller_name/[linear_velocity/angular_velocity].[x/y/z]) for the twist command interfaces.",
+      default_value: [],
+      read_only: true
+    }
+  reference_interfaces: {
+    type: string_array,
+    description: "Specifies the interfaces that will be used to receive references.",
+    default_value: ["pose"],
+    read_only: true,
+    validation: {
+      subset_of<>: [["pose", "twist", "wrench"]],
+      unique<>: null,
+      not_empty<>: null
+    }
+  }
+  reference_interfaces_names_override:
+    pose: {
+      type: string_array,
+      description: "If this parameter is set, it will override the default names (<controller_name>/[position/orientation].[x/y/z/w]) for the pose reference interfaces.",
+      default_value: [],
+      read_only: true
+    }
+    twist: {
+      type: string_array,
+      description: "If this parameter is set, it will override the default names (<controller_name/[linear_velocity/angular_velocity]/[x/y/z]) for the twist reference interfaces.",
+      default_value: [],
+      read_only: true
+    }
+    wrench: {
+      type: string_array,
+      description: "If this parameter is set, it will override the default names (<controller_name/[force/torque].[x/y/z]) for the wrench reference interfaces.",
+      default_value: [],
+      read_only: true
+    }
+  kinematics:
+    plugin_name: {
+        type: string,
+        description: "Specifies the name of the kinematics plugin to load.",
+        read_only: true,
+        validation: {
+          not_empty<>: null,
+        }
+      }
+    plugin_package: {
+        type: string,
+        description: "Specifies the package name that contains the kinematics plugin.",
+        read_only: true,
+        validation: {
+          not_empty<>: null,
+        }
+      }
+    tip: {
+        type: string,
+        description: "Specifies the end effector link of the robot description used by the kinematics plugin.",
+        read_only: true,
+        validation: {
+          not_empty<>: null,
+        }
+      }
+  task_space_reference_frame: {
+      type: string,
+      description: "Specifies the reference frame for the task space.",
+      read_only: true,
+      validation: {
+        not_empty<>: null,
+      }
+    }
+  interaction_filter:
+    type: {
+        type: string,
+        description: "Specifies the name of the interaction filter plugin to load.",
+        read_only: true,
+        validation: {
+          not_empty<>: null,
+        }
+      }
+    name: {
+        type: string,
+        description: "Specifies the name of the interaction filter.",
+        read_only: true,
+        validation: {
+          not_empty<>: null,
+        }
+      }
+  wrench_reference_frame: {
+      type: string,
+      description: "Specifies the reference frame for the wrench.",
+      read_only: true,
+      validation: {
+        not_empty<>: null,
+      }
+    }
+  task_space_command_controller: {
+      type: string,
+      description: "Specifies the controller that will receive the task space commands.",
+      read_only: true,
+      validation: {
+        not_empty<>: null,
+      }
+    }
+  fixed_robot_orientation: {
+    type: bool,
+    description:  "If enabled, the controller will be able to work only with fixed orientation.",
+    default_value: false,
+    read_only: true,
+  }
+  command_tolerance:
+    translational_tolerance: {
+        type: double,
+        description: "Specifies the translational tolerance for the command in meters.",
+        default_value: 0.01,
+        read_only: true,
+      }
+    rotational_tolerance: {
+        type: double,
+        description: "Specifies the rotational tolerance for the command in radians.",
+        default_value: 0.01,
+        read_only: true,
+      }
+  filter_chain: {
+    type: none,
+    description: "The filter chain to filter interaction forces.",
+  }

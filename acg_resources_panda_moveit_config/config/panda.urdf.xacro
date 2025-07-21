@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+  <xacro:arg name="initial_positions_file" default="$(find acg_resources_panda_moveit_config)/config/initial_positions.yaml"/>
+  <xacro:arg name="initial_velocities_file" default="$(find acg_resources_panda_moveit_config)/config/initial_velocities.yaml"/>
+  <xacro:arg name="initial_efforts_file" default="$(find acg_resources_panda_moveit_config)/config/initial_efforts.yaml"/>
+  <xacro:arg name="use_mock_hardware" default="true"/>
+
+  <!-- Import panda urdf file -->
+  <xacro:include filename="$(find acg_resources_panda_description)/urdf/panda.xacro"/>
+
+  <!-- Import control_xacro -->
+  <xacro:include filename="$(find acg_resources_panda_moveit_config)/config/panda.ros2_control.xacro"/>
+
+  <xacro:panda_ros2_control
+    name="FakeSystem"
+    initial_positions_file="$(arg initial_positions_file)"
+    initial_velocities_file="$(arg initial_velocities_file)"
+    initial_efforts_file="$(arg initial_efforts_file)"
+    use_mock_hardware="$(arg use_mock_hardware)"
+  />
+</robot>

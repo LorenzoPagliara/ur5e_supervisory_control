@@ -1,0 +1,469 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+ <tabbed_widget parent="main_window" name="Main Window">
+  <Tab containers="1" tab_name="Robot Pose">
+   <Container>
+    <DockSplitter sizes="1" count="1" orientation="-">
+     <DockSplitter sizes="0.5;0.5" count="2" orientation="|">
+      <DockSplitter sizes="0.35;0.35;0.3" count="3" orientation="-">
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="0.160549" top="0.160651" left="2.400565"/>
+         <limitY/>
+         <curve color="#cf1917" name="/admittance_controller/status/admittance_pose_state/position/x"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="0.578566" top="0.578655" left="2.400565"/>
+         <limitY/>
+         <curve color="#22bd40" name="/admittance_controller/status/admittance_pose_state/position/y"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="0.612101" top="0.612241" left="2.400565"/>
+         <limitY/>
+         <curve color="#2b1fb4" name="/admittance_controller/status/admittance_pose_state/position/z"/>
+        </plot>
+       </DockArea>
+      </DockSplitter>
+      <DockSplitter sizes="0.25;0.25;0.25;0.25" count="4" orientation="-">
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="0.642602" top="0.642720" left="2.400565"/>
+         <limitY/>
+         <curve color="#1f77b4" name="/admittance_controller/status/admittance_pose_state/orientation/w"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.756395" top="-0.756293" left="2.400565"/>
+         <limitY/>
+         <curve color="#d62728" name="/admittance_controller/status/admittance_pose_state/orientation/x"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.106868" top="-0.106766" left="2.400565"/>
+         <limitY/>
+         <curve color="#1ac938" name="/admittance_controller/status/admittance_pose_state/orientation/y"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.059378" top="-0.059274" left="2.400565"/>
+         <limitY/>
+         <curve color="#ff7f0e" name="/admittance_controller/status/admittance_pose_state/orientation/z"/>
+        </plot>
+       </DockArea>
+      </DockSplitter>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="Robot Twist">
+   <Container>
+    <DockSplitter sizes="1" count="1" orientation="-">
+     <DockSplitter sizes="0.5;0.5" count="2" orientation="|">
+      <DockSplitter sizes="0.35;0.35;0.3" count="3" orientation="-">
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.100000" top="0.100000" left="2.400565"/>
+         <limitY/>
+         <curve color="#ff0600" name="/admittance_controller/status/admittance_twist_state/linear/x"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.100000" top="0.100000" left="2.400565"/>
+         <limitY/>
+         <curve color="#00ff18" name="/admittance_controller/status/admittance_twist_state/linear/y"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.100000" top="0.100000" left="2.400565"/>
+         <limitY/>
+         <curve color="#2017cf" name="/admittance_controller/status/admittance_twist_state/linear/z"/>
+        </plot>
+       </DockArea>
+      </DockSplitter>
+      <DockSplitter sizes="0.35;0.35;0.3" count="3" orientation="-">
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.100000" top="0.100000" left="2.400565"/>
+         <limitY/>
+         <curve color="#ff0600" name="/admittance_controller/status/admittance_twist_state/angular/x"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.100000" top="0.100000" left="2.400565"/>
+         <limitY/>
+         <curve color="#00ff2c" name="/admittance_controller/status/admittance_twist_state/angular/y"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.100000" top="0.100000" left="2.400565"/>
+         <limitY/>
+         <curve color="#0011ff" name="/admittance_controller/status/admittance_twist_state/angular/z"/>
+        </plot>
+       </DockArea>
+      </DockSplitter>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="Filtered Wrench">
+   <Container>
+    <DockSplitter sizes="0.35;0.35;0.3" count="3" orientation="-">
+     <DockSplitter sizes="0.5;0.5" count="2" orientation="|">
+      <DockArea name="...">
+       <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+        <range right="7.398108" bottom="0.013830" top="0.594157" left="2.400565"/>
+        <limitY/>
+        <curve color="#ff0000" name="/admittance_controller/status/wrench_state/force/x"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+        <range right="7.398108" bottom="-0.016472" top="0.001376" left="2.400565"/>
+        <limitY/>
+        <curve color="#ff140e" name="/admittance_controller/status/wrench_state/torque/x"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.5;0.5" count="2" orientation="|">
+      <DockArea name="...">
+       <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+        <range right="7.398108" bottom="-0.629873" top="0.051887" left="2.400565"/>
+        <limitY/>
+        <curve color="#00ff1e" name="/admittance_controller/status/wrench_state/force/y"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+        <range right="7.398108" bottom="-0.014664" top="-0.001402" left="2.400565"/>
+        <limitY/>
+        <curve color="#00ff23" name="/admittance_controller/status/wrench_state/torque/y"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.5;0.5" count="2" orientation="|">
+      <DockArea name="...">
+       <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+        <range right="7.398108" bottom="-0.772322" top="-0.219605" left="2.400565"/>
+        <limitY/>
+        <curve color="#0020ff" name="/admittance_controller/status/wrench_state/force/z"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+        <range right="7.398108" bottom="-0.016557" top="0.003419" left="2.400565"/>
+        <limitY/>
+        <curve color="#0000ff" name="/admittance_controller/status/wrench_state/torque/z"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="Raw Wrench">
+   <Container>
+    <DockSplitter sizes="1" count="1" orientation="-">
+     <DockSplitter sizes="0.5;0.5" count="2" orientation="|">
+      <DockSplitter sizes="0.35;0.35;0.3" count="3" orientation="-">
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.397680" bottom="13248.857751" top="13250.645942" left="2.400056"/>
+         <limitY/>
+         <curve color="#ff0600" name="/force_torque_sensor_broadcaster/wrench/wrench/force/x"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.397680" bottom="-23747.063185" top="-23745.471926" left="2.400056"/>
+         <limitY/>
+         <curve color="#00ff22" name="/force_torque_sensor_broadcaster/wrench/wrench/force/y"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.397680" bottom="26784.231334" top="26785.176168" left="2.400056"/>
+         <limitY/>
+         <curve color="#0011ff" name="/force_torque_sensor_broadcaster/wrench/wrench/force/z"/>
+        </plot>
+       </DockArea>
+      </DockSplitter>
+      <DockSplitter sizes="0.35;0.35;0.3" count="3" orientation="-">
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.397680" bottom="-604.657270" top="-604.615376" left="2.400056"/>
+         <limitY/>
+         <curve color="#fe0c00" name="/force_torque_sensor_broadcaster/wrench/wrench/torque/x"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.397680" bottom="-288.777867" top="-288.738803" left="2.400056"/>
+         <limitY/>
+         <curve color="#00ff03" name="/force_torque_sensor_broadcaster/wrench/wrench/torque/y"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.397680" bottom="-668.747469" top="-668.703150" left="2.400056"/>
+         <limitY/>
+         <curve color="#0015ff" name="/force_torque_sensor_broadcaster/wrench/wrench/torque/z"/>
+        </plot>
+       </DockArea>
+      </DockSplitter>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="Haptic force">
+   <Container>
+    <DockSplitter sizes="0.333333;0.333333;0.333333" count="3" orientation="-">
+     <DockArea name="...">
+      <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+       <range right="7.398116" bottom="-0.001554" top="-0.000035" left="2.400579"/>
+       <limitY/>
+       <curve color="#ff0002" name="/hd/haptic_forward_force_controller/actuated_forces/wrench/force/x"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+       <range right="7.398116" bottom="-0.006683" top="-0.000061" left="2.400579"/>
+       <limitY/>
+       <curve color="#27d62c" name="/hd/haptic_forward_force_controller/actuated_forces/wrench/force/y"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+       <range right="7.398116" bottom="-0.014716" top="-0.001480" left="2.400579"/>
+       <limitY/>
+       <curve color="#0000ff" name="/hd/haptic_forward_force_controller/actuated_forces/wrench/force/z"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="Error Pose">
+   <Container>
+    <DockSplitter sizes="1" count="1" orientation="-">
+     <DockSplitter sizes="0.5;0.5" count="2" orientation="|">
+      <DockSplitter sizes="0.35;0.35;0.3" count="3" orientation="-">
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="0.001824" top="0.002518" left="2.400565"/>
+         <limitY/>
+         <curve color="#ff0000" name="/admittance_controller/status/admittance_pose_error/position/x"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.004448" top="-0.003154" left="2.400565"/>
+         <limitY/>
+         <curve color="#00ff0b" name="/admittance_controller/status/admittance_pose_error/position/y"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="0.003050" top="0.004281" left="2.400565"/>
+         <limitY/>
+         <curve color="#0017ff" name="/admittance_controller/status/admittance_pose_error/position/z"/>
+        </plot>
+       </DockArea>
+      </DockSplitter>
+      <DockSplitter sizes="0.25;0.25;0.25;0.25" count="4" orientation="-">
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="0.900000" top="1.100000" left="2.400565"/>
+         <limitY/>
+         <curve color="#ff7f0e" name="/admittance_controller/status/admittance_pose_error/orientation/w"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.100000" top="0.100000" left="2.400565"/>
+         <limitY/>
+         <curve color="#f14cc1" name="/admittance_controller/status/admittance_pose_error/orientation/x"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.100000" top="0.100000" left="2.400565"/>
+         <limitY/>
+         <curve color="#9467bd" name="/admittance_controller/status/admittance_pose_error/orientation/y"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.100000" top="0.100000" left="2.400565"/>
+         <limitY/>
+         <curve color="#17becf" name="/admittance_controller/status/admittance_pose_error/orientation/z"/>
+        </plot>
+       </DockArea>
+      </DockSplitter>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="Error Twist">
+   <Container>
+    <DockSplitter sizes="1" count="1" orientation="-">
+     <DockSplitter sizes="0.5;0.5" count="2" orientation="|">
+      <DockSplitter sizes="0.35;0.35;0.3" count="3" orientation="-">
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.000692" top="0.000760" left="2.400565"/>
+         <limitY/>
+         <curve color="#ff0500" name="/admittance_controller/status/admittance_twist_error/linear/x"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.001489" top="0.001057" left="2.400565"/>
+         <limitY/>
+         <curve color="#00ff0e" name="/admittance_controller/status/admittance_twist_error/linear/y"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.001469" top="0.001747" left="2.400565"/>
+         <limitY/>
+         <curve color="#0021ff" name="/admittance_controller/status/admittance_twist_error/linear/z"/>
+        </plot>
+       </DockArea>
+      </DockSplitter>
+      <DockSplitter sizes="0.35;0.35;0.3" count="3" orientation="-">
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.100000" top="0.100000" left="2.400565"/>
+         <limitY/>
+         <curve color="#ff0005" name="/admittance_controller/status/admittance_twist_error/angular/x"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.100000" top="0.100000" left="2.400565"/>
+         <limitY/>
+         <curve color="#00ff07" name="/admittance_controller/status/admittance_twist_error/angular/y"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.100000" top="0.100000" left="2.400565"/>
+         <limitY/>
+         <curve color="#002eff" name="/admittance_controller/status/admittance_twist_error/angular/z"/>
+        </plot>
+       </DockArea>
+      </DockSplitter>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="Error Wrench">
+   <Container>
+    <DockSplitter sizes="1" count="1" orientation="-">
+     <DockSplitter sizes="0.5;0.5" count="2" orientation="|">
+      <DockSplitter sizes="0.333623;0.332754;0.333623" count="3" orientation="-">
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.594157" top="-0.013830" left="2.400565"/>
+         <limitY/>
+         <curve color="#ff0300" name="/admittance_controller/status/wrench_error/force/x"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.051887" top="0.629873" left="2.400565"/>
+         <limitY/>
+         <curve color="#00ff0a" name="/admittance_controller/status/wrench_error/force/y"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="0.219605" top="0.772322" left="2.400565"/>
+         <limitY/>
+         <curve color="#0029ff" name="/admittance_controller/status/wrench_error/force/z"/>
+        </plot>
+       </DockArea>
+      </DockSplitter>
+      <DockSplitter sizes="0.333623;0.332754;0.333623" count="3" orientation="-">
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.001376" top="0.016472" left="2.400565"/>
+         <limitY/>
+         <curve color="#ff0b00" name="/admittance_controller/status/wrench_error/torque/x"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="0.001402" top="0.014664" left="2.400565"/>
+         <limitY/>
+         <curve color="#0eff22" name="/admittance_controller/status/wrench_error/torque/y"/>
+        </plot>
+       </DockArea>
+       <DockArea name="...">
+        <plot mode="TimeSeries" style="Lines" flip_y="false" flip_x="false">
+         <range right="7.398108" bottom="-0.003419" top="0.016557" left="2.400565"/>
+         <limitY/>
+         <curve color="#0017ff" name="/admittance_controller/status/wrench_error/torque/z"/>
+        </plot>
+       </DockArea>
+      </DockSplitter>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <currentTabIndex index="4"/>
+ </tabbed_widget>
+ <use_relative_time_offset enabled="1"/>
+ <!-- - - - - - - - - - - - - - - -->
+ <!-- - - - - - - - - - - - - - - -->
+ <Plugins>
+  <plugin ID="DataLoad CSV">
+   <parameters time_axis="" delimiter="0"/>
+  </plugin>
+  <plugin ID="DataLoad MCAP"/>
+  <plugin ID="DataLoad ROS2 bags">
+   <use_header_stamp value="false"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+   <boolean_strings_to_number value="true"/>
+   <remove_suffix_from_strings value="true"/>
+   <selected_topics value=""/>
+  </plugin>
+  <plugin ID="DataLoad ULog"/>
+  <plugin ID="ROS2 Topic Subscriber">
+   <use_header_stamp value="true"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+   <boolean_strings_to_number value="true"/>
+   <remove_suffix_from_strings value="true"/>
+   <selected_topics value="/admittance_controller/status;/force_torque_sensor_broadcaster/wrench;/hd/haptic_forward_force_controller/actuated_forces"/>
+  </plugin>
+  <plugin ID="UDP Server"/>
+  <plugin ID="WebSocket Server"/>
+  <plugin ID="ZMQ Subscriber"/>
+  <plugin ID="Fast Fourier Transform"/>
+  <plugin ID="Quaternion to RPY"/>
+  <plugin ID="Reactive Script Editor">
+   <library code="--[[ Helper function to create a series from arrays&#xa;&#xa; new_series: a series previously created with ScatterXY.new(name)&#xa; prefix:     prefix of the timeseries, before the index of the array&#xa; suffix_X:   suffix to complete the name of the series containing the X value. If [nil], use the index of the array.&#xa; suffix_Y:   suffix to complete the name of the series containing the Y value&#xa; timestamp:   usually the tracker_time variable&#xa;              &#xa; Example:&#xa; &#xa; Assuming we have multiple series in the form:&#xa; &#xa;   /trajectory/node.{X}/position/x&#xa;   /trajectory/node.{X}/position/y&#xa;   &#xa; where {N} is the index of the array (integer). We can create a reactive series from the array with:&#xa; &#xa;   new_series = ScatterXY.new(&quot;my_trajectory&quot;) &#xa;   CreateSeriesFromArray( new_series, &quot;/trajectory/node&quot;, &quot;position/x&quot;, &quot;position/y&quot;, tracker_time );&#xa;--]]&#xa;&#xa;function CreateSeriesFromArray( new_series, prefix, suffix_X, suffix_Y, timestamp )&#xa;  &#xa;  --- clear previous values&#xa;  new_series:clear()&#xa;  &#xa;  --- Append points to new_series&#xa;  index = 0&#xa;  while(true) do&#xa;&#xa;    x = index;&#xa;    -- if not nil, get the X coordinate from a series&#xa;    if suffix_X ~= nil then &#xa;      series_x = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_X) )&#xa;      if series_x == nil then break end&#xa;      x = series_x:atTime(timestamp)&#x9; &#xa;    end&#xa;    &#xa;    series_y = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_Y) )&#xa;    if series_y == nil then break end &#xa;    y = series_y:atTime(timestamp)&#xa;    &#xa;    new_series:push_back(x,y)&#xa;    index = index+1&#xa;  end&#xa;end&#xa;&#xa;--[[ Similar to the built-in function GetSeriesNames(), but select only the names with a give prefix. --]]&#xa;&#xa;function GetSeriesNamesByPrefix(prefix)&#xa;  -- GetSeriesNames(9 is a built-in function&#xa;  all_names = GetSeriesNames()&#xa;  filtered_names = {}&#xa;  for i, name in ipairs(all_names)  do&#xa;    -- check the prefix&#xa;    if name:find(prefix, 1, #prefix) then&#xa;      table.insert(filtered_names, name);&#xa;    end&#xa;  end&#xa;  return filtered_names&#xa;end&#xa;&#xa;--[[ Modify an existing series, applying offsets to all their X and Y values&#xa;&#xa; series: an existing timeseries, obtained with TimeseriesView.find(name)&#xa; delta_x: offset to apply to each x value&#xa; delta_y: offset to apply to each y value &#xa;  &#xa;--]]&#xa;&#xa;function ApplyOffsetInPlace(series, delta_x, delta_y)&#xa;  -- use C++ indeces, not Lua indeces&#xa;  for index=0, series:size()-1 do&#xa;    x,y = series:at(index)&#xa;    series:set(index, x + delta_x, y + delta_y)&#xa;  end&#xa;end&#xa;"/>
+   <scripts/>
+  </plugin>
+  <plugin ID="CSV Exporter"/>
+  <plugin ID="ROS2 Topic Re-Publisher"/>
+ </Plugins>
+ <!-- - - - - - - - - - - - - - - -->
+ <previouslyLoaded_Datafiles/>
+ <previouslyLoaded_Streamer name="ROS2 Topic Subscriber"/>
+ <!-- - - - - - - - - - - - - - - -->
+ <customMathEquations/>
+ <snippets/>
+ <!-- - - - - - - - - - - - - - - -->
+</root>

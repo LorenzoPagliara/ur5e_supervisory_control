@@ -1,0 +1,9 @@
+<library path="haptic_fb_controller">
+    <class name="haptic_fb_controller/HapticFeedbackController"
+           type="haptic_fb_controller::HapticFeedbackController"
+           base_class_type="controller_interface::ChainableControllerInterface">
+        <description>
+            This class implements a feedback controller for a haptic device.
+    </description>
+    </class>
+</library>

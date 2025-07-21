@@ -1,0 +1,41 @@
+admittance_filter:
+  mass: {
+    type: double_array,
+    description: "Specifies the mass values for x, y, z, rx, ry, and rz used in the admittance law.",
+    validation: {
+      fixed_size<>: 6,
+      element_bounds<>: [ 0.0001, 10000.0 ]
+    }
+  }
+  damping_ratio: {
+    type: double_array,
+    description: "Specifies damping ratio values for x, y, z, rx, ry, and rz used in the admittance law.
+    The damping ratio is defined as: d = D / (2 * sqrt( M * S )).",
+    validation: {
+      fixed_size<>: 6,
+      element_bounds<>: [ 0.0, 20.0 ]
+    }
+  }
+  stiffness: {
+    type: double_array,
+    description: "Specifies the stiffness values for x, y, z, rx, ry, and rz used in the admittance law.",
+    validation: {
+      fixed_size<>: 6,
+      element_bounds<>: [ 0.0, 1000000.0 ]
+    }
+  }
+  order: {
+    type: int,
+    description: "Specifies the order of the admittance filter ",
+    validation: {
+      bounds<>: [ 0, 2 ]
+    }
+  }
+  compliant_axis: {
+    type: bool_array,
+    description: "Specifies the axes to be used in the admittance filter. The axes are defined as follows:
+    0 = x, 1 = y, 2 = z, 3 = rx, 4 = ry, 5 = rz",
+    validation: {
+      fixed_size<>: 6
+    }
+  }

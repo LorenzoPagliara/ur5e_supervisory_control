@@ -1,0 +1,158 @@
+haptic_fb_controller:
+  joints: {
+    type: string_array,
+    description: "Specifies the joint name for the haptic feedback controller.",
+    read_only: true
+  }
+  state_interfaces: {
+    type: string_array,
+    default_value: [],
+    description: "Specifies which state interfaces the controller will claim.",
+    read_only: true
+  }
+  command_interfaces: {
+    type: string_array,
+    default_value: [],
+    description: "Specifies which command interfaces the controller will claim.",
+    read_only: true
+  }
+  simulation: {
+    type: bool,
+    default_value: false,
+    description: "Enable simulation mode",
+    read_only: true
+  }
+  read_force_torque_from_topic: {
+    type: bool,
+    default_value: false,
+    description: "Read force and torque from a topic",
+    read_only: true
+  }
+  robot_base_frame: {
+    type: string,
+    default_value: "base_link_inertia",
+    description: "Specifies the robot base frame.",
+  }
+  robot_ee_frame: {
+    type: string,
+    default_value: "wrist_3_link",
+    description: "Specifies the robot end-effector frame.",
+  }
+  RPY_robot_base_to_haptic_base: {
+    type: double_array,
+    default_value: [0.0, 0.0, 0.0],  # rad(0), rad(0), rad(0)
+    description: "Specifies the roll, pitch, and yaw angles for the transform from the robot base to the haptic base."
+  }
+  force_filter_chain: {
+    type: none,
+    description: "The filter chain to filter interaction forces."
+  }
+  motion_error_filter_chain: {
+    type: none,
+    description: "The filter chain to filter motion error."
+  }
+  kinematics:
+    plugin_name: {
+      type: string,
+      description: "Specifies the name of the kinematics plugin to load."
+    }
+    plugin_package: {
+      type: string,
+      description: "Specifies the package name that contains the kinematics plugin."
+    }
+    tip: {
+      type: string,
+      description: "Specifies the end effector link of the robot description used by the kinematics plugin."
+    }
+  haptic_force_controller_interfaces: {
+    type: string_array,
+    default_value: [
+      "position/x",
+      "position/y",
+      "position/z",
+      "velocity/x",
+      "velocity/y",
+      "velocity/z"
+    ],
+    description: "Specifies the haptic force controller interfaces."
+  }
+  haptic_force_controller: {
+    type: string,
+    default_value: "haptic_force_controller",
+    description: "Specifies the name of the haptic force controller."
+  }
+  enable_motion_error: {
+    type: bool,
+    default_value: false,
+    description: "Enable motion error logic"
+  }
+  read_motion_error_from_topic: {
+    type: bool,
+    default_value: false,
+    description: "Read motion error from a topic"
+  }
+  force_deadband: {
+      type: double,
+      default_value: 0.0 ,
+      description: "Specifies the force deadband value."
+    }
+
+  wrench_publisher:
+    topic_name: {
+      type: string,
+      description: "Specifies the topic name for the wrench publisher.",
+      default_value: "~/wrench"
+    }
+    frame_id: {
+      type: string,
+      description: "Specifies the frame ID for the wrench publisher.",
+      default_value: ""
+    }
+
+  position_error_publisher:
+    topic_name: {
+      type: string,
+      description: "Specifies the topic name for the position error publisher.",
+      default_value: "~/position_error"
+    }
+    frame_id: {
+      type: string,
+      description: "Specifies the frame ID for the position error publisher.",
+      default_value: ""
+    }
+
+  velocity_error_publisher:
+    topic_name: {
+      type: string,
+      description: "Specifies the topic name for the velocity error publisher.",
+      default_value: "~/velocity_error"
+    }
+    frame_id: {
+      type: string,
+      description: "Specifies the frame ID for the velocity error publisher.",
+      default_value: ""
+    }
+
+  wrench_subscriber:
+    topic_name: {
+      type: string,
+      description: "Specifies the topic name for the wrench subscriber.",
+      default_value: "/force_torque_sensor_broadcaster/wrench"
+    }
+    queue_size: {
+      type: int,
+      description: "Specifies the queue size for the wrench subscriber.",
+      default_value: 10
+    }
+
+  admittance_state_subscriber:
+    topic_name: {
+      type: string,
+      description: "Specifies the topic name for the admittance state subscriber.",
+      default_value: "/AdmittanceController/status"
+    }
+    queue_size: {
+      type: int,
+      description: "Specifies the queue size for the admittance state subscriber.",
+      default_value: 10
+    }

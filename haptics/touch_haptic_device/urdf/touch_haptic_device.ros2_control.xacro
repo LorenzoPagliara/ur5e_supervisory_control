@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="touch_haptic_device_ros2_control" params="
+    prefix:=''">
+    <ros2_control name="${prefix}touch_haptic_device" type="system">
+      <hardware>
+        <plugin>haptic_device/HapticDeviceTouch</plugin>
+      </hardware>
+
+      <gpio name="${prefix}touch_haptic_device">
+        <state_interface name="position.x"/>
+        <state_interface name="position.y"/>
+        <state_interface name="position.z"/>
+        <state_interface name="orientation.x"/>
+        <state_interface name="orientation.y"/>
+        <state_interface name="orientation.z"/>
+        <state_interface name="orientation.w"/>
+        <state_interface name="linear_velocity.x"/>
+        <state_interface name="linear_velocity.y"/>
+        <state_interface name="linear_velocity.z"/>
+        <state_interface name="angular_velocity.x"/>
+        <state_interface name="angular_velocity.y"/>
+        <state_interface name="angular_velocity.z"/>
+
+        <command_interface name="force.x"/>
+        <command_interface name="force.y"/>
+        <command_interface name="force.z"/>
+        <command_interface name="torque.x"/>
+        <command_interface name="torque.y"/>
+        <command_interface name="torque.z"/>
+      </gpio>
+    </ros2_control>
+  </xacro:macro>
+</robot>

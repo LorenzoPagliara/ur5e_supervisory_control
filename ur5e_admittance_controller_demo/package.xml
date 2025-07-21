@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ur5e_admittance_controller_demo</name>
+  <version>0.0.0</version>
+  <description>An application package for the UR5e under the admittance controller</description>
+  <author email="lpagliara@unisa.it">Lorenzo Pagliara</author>
+  <maintainer email="eferrentino@unisa.it">Enrico Ferrentino</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>acg_admittance_controller</exec_depend>
+  <exec_depend>acg_resources_ur5e_moveit_config</exec_depend>
+  <exec_depend>acg_resources_ur_force_torque_sensor_description</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

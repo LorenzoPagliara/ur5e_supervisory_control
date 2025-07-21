@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>supervisory_control_rviz_panel</name>
+  <version>0.0.0</version>
+  <description>Custom RViz2 panel for supervisory control</description>
+  <author email="lpagliara@unisa.it">Lorenzo Pagliara</author>
+  <maintainer email="eferrentino@unisa.it">Enrico Ferrentino</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>pluginlib</depend>
+  <depend>rviz_common</depend>
+  <depend>supervisory_control_rviz_msg</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

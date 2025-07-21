@@ -1,0 +1,30 @@
+ft_sensor_mounting:
+  description_package: "acg_resources_generic_mounting_description"
+  description_file: "urdf/generic_mounting.urdf.xacro"
+  description_params:
+    height: 0.000001
+    radius: 0.000001
+    mass: 0.000001
+
+force_torque_sensor:
+  description_package: "acg_resources_generic_force_torque_sensor_description"
+  description_file: "urdf/generic_force_torque_sensor.urdf.xacro"
+  description_params:
+    height: 0.000001
+    radius: 0.000001
+    mass: 0.000001
+  ros2_control_package: "acg_resources_ur_force_torque_sensor_description"
+  ros2_control_file: "urdf/ur_fts.ros2_control.xacro"
+  ros2_control_params:
+    tf_prefix: ""
+    robot_ip: "192.168.20.183"
+    update_rate: 100
+
+tool:
+  description_package: "acg_resources_chalk_holder_description"
+  description_file: "urdf/chalk_holder.urdf.xacro"
+
+ignored_collision_links:
+  - "wrist_1_link"
+  - "wrist_2_link"
+  - "wrist_3_link"
