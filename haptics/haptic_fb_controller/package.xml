@@ -24,7 +24,6 @@
   <depend>ros2_control</depend>
 
   <exec_depend>acg_admittance_controller</exec_depend>
-  <exec_depend>acg_follow_task_space_trajectory_action_client</exec_depend>
   <exec_depend>gravity_compensation_filter</exec_depend>
   <exec_depend>haptic_forward_force_controller</exec_depend>
   <exec_depend>touch_haptic_device</exec_depend>

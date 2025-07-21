@@ -13,7 +13,6 @@
   <depend>hardware_interface</depend>
   <depend>pluginlib</depend>
   <depend>rclcpp</depend>
-  <depend>ur_rtde</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
