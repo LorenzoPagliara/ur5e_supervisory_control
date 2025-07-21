@@ -38,26 +38,7 @@ def launch_setup(context, *args, **kwargs):
         output="screen",
     )
 
-    bag_dir = "/home/lpagliara/ros2_ws/src/unisa_acg_ros2/supervisory_control/ur5e_app_screwdriving_supervisory_control/bagfiles"
-    os.makedirs(bag_dir, exist_ok=True)
-
-    bag_name = os.path.join(
-        bag_dir, f"supervised_control_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-    )
-    bag_record_process = ExecuteProcess(
-        cmd=[
-            "ros2",
-            "bag",
-            "record",
-            "/admittance_controller/status",
-            "/hd/haptic_virtual_force_controller/actuated_forces",
-            "-o",
-            bag_name,
-        ],
-        output="screen",
-    )
-
-    return [supervisory_control_node, camera_streaming_node, bag_record_process]
+    return [supervisory_control_node, camera_streaming_node]
 
 
 def generate_launch_description():

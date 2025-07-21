@@ -40,3 +40,7 @@ To install the UR5e packages, run the following command:
     ```bash
     git clone git@github.com:LorenzoPagliara/ur5e_supervisory_control.git
     ```
+
+## Demo
+
+To execute the demo of the screwdriving task under supervisory control with the UR5e, refer to the package [`ur5e_app_screwdriving_supervisory_control`](./supervisory_control/ur5e_app_screwdriving_supervisory_control/README.md).

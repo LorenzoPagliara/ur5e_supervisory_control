@@ -2,6 +2,15 @@
 
 This package contains the configuration files and launch files to execute a supervisory control application for screwdriving tasks with the UR5e robot.
 
+## Build
+
+In order to build the package, run the following command:
+
+```bash
+colcon build --packages-up-to ur5e_app_screwdriving_supervisory_control
+source install/setup.bash
+```
+
 ## Demos
 
 In this package, two demos are provided to show the supervisory control application for screwdriving tasks with the UR5e robot, both in simulation and real world.
